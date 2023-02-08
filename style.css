@@ -1,0 +1,85 @@
+:root {
+  --clr-bg-btn-hover: rgb(53, 104, 123);
+  --clr-white: rgb(255, 250, 250);
+  --clr-transparent: rgba(255, 255, 255, 0.65);
+}
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  background-image: url("assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#animation-section {
+  display: flex;
+  position: absolute;
+  top: 80%;
+  gap: 1.5rem;
+  height: 15%;
+  width: 35%;
+  margin-block-start: auto;
+  translate: 0 -35%;
+  animation: pets-running 5s linear infinite running;
+}
+
+.animation-gif {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+#dog {
+  width: 65%;
+}
+
+#cat {
+  width: 25%;
+}
+
+#mouse {
+  width: 10%;
+}
+
+@keyframes pets-running {
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    translate: 185%;
+  }
+}
+
+#animation-toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 0.5em;
+  border: 1px solid var(--clr-white);
+  border-radius: 0.25em;
+  background-color: var(--clr-transparent);
+  transition: all 0.75s ease;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
